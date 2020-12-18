@@ -570,6 +570,11 @@ class usuarioDAO extends Controller
 		return $resultado;
 	}
 	
+	public function enviarComando($token, $fecha){
+        		ControlInicio::actualizarChat();
+		return 0;
+	}
+
 	public function usuarioCambiarDinero($id, $dinero){
 		$actual = $this->buscarDineroId($id);
 		$sql = "UPDATE usuarios SET efectivo = ? WHERE idUsers = ?";

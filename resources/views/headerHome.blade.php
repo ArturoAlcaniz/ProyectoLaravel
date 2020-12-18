@@ -68,7 +68,7 @@
 			
 			<a href="<?php echo URL::to('/')."/home/chat"; ?>">
 			
-				<div <?php if($_SERVER['REQUEST_URI'] == "/ProyectoLaravel/public/home/chat") echo "class='btn_header header_current'"; else echo "class='btn_header'"; ?>>
+				<div <?php if($_SERVER['REQUEST_URI'] == "/ProyectoLaravel/public/home/chat" || $_SERVER['REQUEST_URI'] == "/ProyectoLaravel/public/enviarmensaje") echo "class='btn_header header_current'"; else echo "class='btn_header'"; ?>>
 					<img id="chat" src="{{ asset('imagenes/chat.png') }}">
 				</div>
 			

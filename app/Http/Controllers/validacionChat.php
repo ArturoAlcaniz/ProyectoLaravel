@@ -100,6 +100,7 @@ class validacionChat extends Controller
 				}
 
 				$u->limpiarChat();
+				$u->enviarComando(Session("token"), $hoy);
 				$avisochat = "<p class='correcto'>chat limpiado correctamente</p>";
 				return view('chat')->with('avisochat', $avisochat);
 			}
@@ -108,7 +109,7 @@ class validacionChat extends Controller
 				
 				if($u->obtenerPoder(Session("token"))<4){
 				
-					$avisochat = "<p class='error'>No tienes permiso para limpiar el chat</p>";
+					$avisochat = "<p class='error'>No tienes permiso para mutear en el chat</p>";
 					return view('chat')->with('avisochat', $avisochat);			
 				}
 				

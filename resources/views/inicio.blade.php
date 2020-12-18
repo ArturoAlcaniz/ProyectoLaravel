@@ -2,25 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	
 	<?php
-		ini_set('display_errors', 1);
-
-		if (session_status() == PHP_SESSION_NONE) {
-			session_start();
-		}
-
-		use App\Http\Controllers\ControlInicio;
-
-		if(!isset($avisoregistro)) $avisoregistro = '';
-		if(!isset($avisologin)) $avisologin = '';
-
-		echo "token =" . Session('tokenCookie');
-		echo "avisologin=". $avisologin;
-
-		$c = new ControlInicio();
-
+		use App\Http\Controllers\ControlInicio;	
 	?>
 
-	
 	@if(ControlInicio::logeado())
 		<script>window.location = "/ProyectoLaravel/public/home";</script>
 	@endif
@@ -37,6 +21,19 @@
 	@endif
 	
     <body>		
+
+	<?php
+		ini_set('display_errors', 1);
+
+		if(!isset($avisoregistro)) $avisoregistro = '';
+		if(!isset($avisologin)) $avisologin = '';
+
+		echo "token =" . Session('tokenCookie');
+		echo "avisologin=". $avisologin;
+
+		$c = new ControlInicio();
+
+	?>
 
 	<img src="{{ asset('imagenes/cities.gif') }}" class="fn">
 	
